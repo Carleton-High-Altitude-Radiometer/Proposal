@@ -1,0 +1,134 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% LaTeX Template: Project Titlepage Modified (v 0.1) by rcx
+%
+% Original Source: http://www.howtotex.com
+% Date: February 2014
+% 
+% This is a title page template which be used for articles & reports.
+% 
+% This is the modified version of the original Latex template from
+% aforementioned website.
+% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[12pt]{article}
+\usepackage[a4paper]{geometry}
+\usepackage[myheadings]{fullpage}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\usepackage{graphicx, wrapfig, subcaption, setspace, booktabs}
+\usepackage[T1]{fontenc}
+\usepackage[font=small, labelfont=bf]{caption}
+\usepackage{fourier}
+\usepackage[protrusion=true, expansion=true]{microtype}
+\usepackage[english]{babel}
+\usepackage{sectsty}
+\usepackage{url, lipsum}
+
+\newcommand{\HRule}[1]{\rule{\linewidth}{#1}}
+\onehalfspacing
+\setcounter{tocdepth}{5}
+\setcounter{secnumdepth}{5}
+
+%-------------------------------------------------------------------------------
+% HEADER & FOOTER
+%-------------------------------------------------------------------------------
+\pagestyle{fancy}
+\fancyhf{}
+\setlength\headheight{15pt}
+\fancyhead[L]{CHARM}
+\fancyhead[R]{Carleton University}
+\fancyfoot[R]{Page \thepage\ of \pageref{LastPage}}
+%-------------------------------------------------------------------------------
+% TITLE PAGE
+%-------------------------------------------------------------------------------
+
+
+\begin{document}
+
+\bibliographystyle{ieeetr}
+
+\title{ \normalsize \textsc{}
+		\\ [2.0cm]
+		\HRule{0.5pt} \\
+		\LARGE \textbf{{Carleton High Altitude Radiometer}}\\
+		\large \textbf{{Project Proposal}}\\
+		\large \textbf{{Canadian Stratospheric Balloon Experiment Design Challenge}}
+		\HRule{2pt} \\ [0.5cm]
+		\normalsize \today \vspace*{5\baselineskip}
+		\textsc{
+		\\
+		David Bascelli \quad Team Lead \\
+		Jacob Booth \quad Sensor Lead \\
+		}}
+\date{}
+
+
+
+\author{
+		Carleton University \\
+		}
+
+\maketitle
+
+\newpage
+
+\tableofcontents
+\newpage
+
+\listoffigures
+\newpage
+
+\listoftables
+\newpage
+
+%-------------------------------------------------------------------------------
+% Section title formatting
+\sectionfont{\scshape}
+%-------------------------------------------------------------------------------
+
+%-------------------------------------------------------------------------------
+% BODY
+%-------------------------------------------------------------------------------
+
+\section{Executive Summary}
+\newpage
+
+\section{Proposal}
+\subsection{Scientific Objectives}
+\subsection{Experiment Design}
+\subsubsection{Outline}
+\subsubsection{Radiometer Block Diagram}
+\subsubsection{Attitude Determination}
+\subsubsection{Experimental Procedures}
+\subsubsection{Resources}
+\subsubsection{Technical Risk Assessment}
+\begin{enumerate}
+\item Human
+\cite{omar_el-kassaby_abdelghaffar_2017}
+\item Technical and Environmental
+\end{enumerate}
+\subsection{Management}
+\subsubsection{Team Structure}
+\subsubsection{Project Time-line}
+\subsubsection{Budget}
+\subsubsection{Managerial Risk Assessment}
+
+\subsection{Outreach}
+\subsubsection{Public Outreach}
+\subsubsection{Academic Outreach}
+
+\section{Conclusion}
+
+%-------------------------------------------------------------------------------
+% REFERENCES
+%-------------------------------------------------------------------------------
+\newpage
+\section{References}
+
+\bibliography{library}
+
+\section{Appendix}
+
+
+\end{document}
