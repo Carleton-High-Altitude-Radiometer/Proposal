@@ -24,7 +24,9 @@
 \usepackage[english]{babel}
 \usepackage{sectsty}
 \usepackage{url, lipsum}
+\usepackage{tabularx}
 
+\newcommand\boldblue[1]{\textcolor{blue}{\textbf{#1}}}
 \newcommand{\HRule}[1]{\rule{\linewidth}{#1}}
 \onehalfspacing
 \setcounter{tocdepth}{5}
@@ -98,14 +100,34 @@ Microwave remote sensing has been a common payload on earth observation satellit
 \section{Proposal}
 \subsection{Scientific Objectives}
 
- Our scientific objective is to make low cost measurements of soil moisture content using a balloon born microwave radiometer. 
+Our scientific objective is to make low cost measurements of soil moisture content using a balloon born microwave radiometer. The payload will take wide-band measurements of the noise equivalent temperature of the ground and determine soil moisture content through a modification of the zeroth order radiative transfer model (ZRT Model). A basic dielectric model will be used to solve for volumetric moisture content. \cite{ulaby_fung_moore_1986} A NADIR pointing antenna will extend from the pelican case to take measurements of the background microwave emissions coming from the ground. The radiometer will be of the Dicke type, which compares measurements to a known noise source to eliminate the effect of varying gain due to extreme temperatures. A 9-axis inertial measurement unit (IMU) will measure linear acceleration, angular rates, and magnetic field strength to determine the attitude of the payload. GPS data will be saved to track the location of the payload as it passes over the earth. With the attitude and GPS data, a map of soil moisture content under the payloads flight path will be able to be made. 
 
-Balloon born radiometers even have some advantages to space-born radiometers, including reduced antenna directionality requirements and reduced atmospheric effects.
+A Balloon born microwave radiometer to measure soil moisture was selected for several reasons. First, soil moisture content was chosen to be measured because of its importance to weather and climate monitoring.\cite{Pan2001} Soil moisture measurements are useful in many different circumstances. Climate models, weather predictions, crop yield estimation and water resource management systems all benifit from accurate and up to date measurements of ground moisture content. Soil moisture measurements have also proved useful in predicting wildfires.\cite{chaparro_piles_vall-llossera_2016,krueger_ochsner_quiring_engle_carlson_twidwell_fuhlendorf_2017} Second, measuring soil moisture content from radiometers is reasonably common and a significant amount of literature exists on the topic. Most literature either concerns satellite born radiometers, aircraft born radiometers, or static ground based radiometers. \cite{Hanington,Kerr2001,ulaby_fung_moore_1986,Friesen2008,Schmugge1994} By exploring the possibility of balloon based radiometers and by attempting more advanced soil moisture estimation techniques, we can achieve a degree of novelty while still having a wealth of proven literature and designs to aid us. Third, balloon mounted radiometers have several advantages to static, aircraft mounted, and satellite radiometers. Due to the balloon's proximity to the ground compared to low earth orbit, balloon born radiometers can achieve greater resolution with smaller and less directional antennas. Balloon radiometers can achieve much greater loiter times than aircraft born radiometers, although balloons are uncontrolled. Balloon born radiometers also have the advantage of being significantly cheaper to operate than aircraft or satellite mounted radiometers. A trade study was performed in table \ref{tab:algorithm_parameters}, and it can be seen that balloon born radiometers offer a unique performance compromise at very low cost when compared to aircraft mounted or satellite based radiometers.
+
+\begin{table}[!h]
+	\centering
+	\vspace{0.5cm}
+	\renewcommand{\arraystretch}{1.3}
+	\caption{Radiometer Vehicle Trade Study. }
+	\label{tab:algorithm_parameters}
+	\begin{tabularx}{\textwidth}{llll}
+		\toprule
+						& Satellite & Aircraft & Balloon \\		
+		\midrule
+		Cost			&\$\$\$&\$\$&\$ \\ 
+		Antenna Size 			&Large&Small&Small/Medium \\
+		Resolution 				&Low Resolution&High Resolution&Medium Resolution \\ 
+		Atmospheric Effects		&High&Low&Moderate \\ 
+		Loiter Time				&N/A&Up to 6 hours&6 - 48 Hours \\ 
+		Controllability			&Uncontrolled but predictable&Controlled&Uncontrolled 
+	\end{tabularx}
+\end{table}
+
+Lastly, soil moisture retrieval from radiometric data is one of the simpler radiometer configurations to design and operate, allowing our team to gain experience with radiometer principals before attempting more advanced designs. Thus, a microwave radiometer was chosen as our balloon payload because of its many geoscientific applications, the wealth of literature and design aids, their suitability to the high altitude balloon environment, and because it allows us to gain experience with a relatively simple radiometer configuration.
 
  
 \subsection{Experiment Design}
-\subsubsection{Outline}
-
+The antenna will either be terminated with a coaxial cable at the antenna, or wave-guides will be used to guide C-band microwaves into the pelican case to keep all connections within the pelican case.
 \subsubsection{Radiometer Block Diagram}
 David
 \subsubsection{Attitude Determination}
@@ -141,7 +163,7 @@ Jacob
 \newpage
 \section{References}
 
-\bibliography{library}
+\bibliography{radiometer}
 
 \section{Appendix}
 
