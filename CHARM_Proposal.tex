@@ -129,6 +129,55 @@ Lastly, soil moisture retrieval from radiometric data is one of the simpler radi
 
 Passive microwave radiometers work by measuring the electromagnetic radiation emitted from the earth's surface in the microwave band. Liquid water content and water vapour is translucent to microwave frequencies, so an estimation of soil water content can be made by measuring the power of the emitted noise. By utilizing modern digital signal processing techniques, a wide-band power spectral density of the noise will be calculated. Using a radiative transfer model and potentially utilizing tertiary datasets, the power spectral density will be able to give a measurement of soil moisture content.
 
+\subsubsection{Antenna Selection and Fabrication}
+The design and construction of the antenna system presents many challenges, both in our radiometer and in space 
+based systems. Antennas must be highly directional (have a high gain), which typically requires them to be quite large and heavy. In addition, lower frequencies require bigger antennas. In fact, earlier iterations of the design 
+operated at a much lower frequency to make the electronics simpler, however it would not have been possible to fit
+the antenna. Therefore, antenna sizing is the defining constraint on this system.\\
+
+There are two solutions under consideration for the design of the antenna. A single large antenna, or an antenna 
+array. Using an array of radiometers, we can create a synthetic aperture radiometer (SAR). With this solution we
+would likely measure at 1.4 GHz, reducing hardware expense and complexity. This would involve precisely placing
+four to eight antennas around the base of the gondola. The individual antennas would only be 10 cm long, and
+weight very little. Coax cable would then need to be routed back to the experiment case. The use of SAR is common
+in space based installations, as it is far lighter then having a large dish \cite{skou1989microwave}. 
+However, the placement of many antennas, and the routing of many cables through the gonadal would be 
+problematic. In addition the signal processing required to get meaningful data from a SAR is incredibly complex
+and difficult, making this solution undesirably. It is mentioned in the event that the second solution does 
+not work.\\
+
+The second solution is to use a large horn antenna which sticks out from the side of the gonadal as shown in 
+figure \ref{fig:antenna}. While this has the advantage of being easier to implement and build, it is heavier 
+and less accurate then SAR. The exact sizing of the antenna would have to be carefully chosen to be as big
+as allowable (the larger the antenna, the better the accuracy will be), but at a minimum the large opening will
+need to be 30 cm by 30 cm. The horn can also be a rectangular shape, do that it is as wide as the gonadal, but 
+only sticks out by 30 cm. The horn antenna will contain two output pins, this will allow us to measure the
+polarization of the incident radiation as well as its magnitude and spectrum \cite{constantine2005antenna}.
+Being able to take these simultaneous measurements will improve results.\\
+\begin{figure}
+	\centering
+	\includegraphics[width=0.5\linewidth]{Figures/rough_antenna.png}
+	\label{fig:antenna}
+	\caption{Horn antenna}
+\end{figure}
+The graph shown in figure \ref{fig:antenna_direction} shows the directivity of the antenna shown in figure
+\ref{fig:antenna} (note that this is just an concept an not the final design). The directivity is high in 
+the dimension where the antenna is large. This means that if we have a wide and thin antenna we are going to 
+be scanning narrow bands along the ground. 
+\begin{figure}
+	\centering
+	\includegraphics[width=0.5\linewidth]{Figures/antenna_gain.png}
+	\label{fig:antenna_direction}
+	\caption{Horn antenna directivity}
+\end{figure}
+One way of constructing the antenna is to have large copper sheets cut into shape then soldered together. While
+this is fairly easy, it is imprecise and the resulting antenna is heavy. Another solution being investigated is
+to 3D print the antenna, then chemically copper plate it. This will allow us to create more complicated geometry
+and be much lighter then something made of solid copper. In house electroplating is being investigated for 
+reduced cost, but the process in difficult and requires the development of procedures and techniques
+\cite{bryancera2014}. Alternatively, a third party can be payed to electroplate our 3D print, though it would 
+cost more.
+
 \subsubsection{Radiometer Block Diagram}
 David
 
