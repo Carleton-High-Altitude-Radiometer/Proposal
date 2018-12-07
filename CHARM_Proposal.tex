@@ -169,7 +169,9 @@ Since our radiometer is only measuring a single frequency and polarization, tert
 \end{enumerate}
 
 \subsubsection{Attitude Determination}
-Jacob
+
+Depending on the achieved directionality of the antenna, it may be important to determine the actual attitude of the payload during the experiment to obtain an accurate map of the ground below. If a fairly non-directional antenna is chosen, then the attitude can safely be assumed to be always NADIR pointing. Sill, an IMU might still be included as modern MEMS IMU's are small, cheap and power efficient. Determining attitude from a 9-DoF accelerometer-gyroscope-magnetometer sensor is well explored in literature. Sensor fusion based on statistical methods or Kalman filtering is so commonplace that it could almost be considered trivial. A Kalman filter based on pendulum dynamics to model the balloon payload will be implemented to fuse the 9-DoF measurements and extract the current attitude. It is expected that this method will be more than accurate enough to account for minor attitude variations given the antennas expected beam-width.
+
 \subsubsection{Experimental Procedures}
 David
 \subsubsection{Resources}
