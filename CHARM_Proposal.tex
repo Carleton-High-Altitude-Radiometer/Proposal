@@ -103,7 +103,7 @@ Microwave remote sensors have been a common payload on earth observation satelli
 \section{Proposal}
 \subsection{Scientific Objective}
 
-Our scientific objective is to make low cost measurements of soil moisture content using a balloon born passive microwave radiometer. The payload will take wide-band measurements of the microwave noise emitted by the ground and determine soil moisture content through a modification of the zeroth order radiative transfer model (ZRT Model). A basic dielectric model will be used to solve for volumetric moisture content. \cite{ulaby_fung_moore_1986} A NADIR pointing antenna will extend from the pelican case to take measurements of the background microwave emissions coming from the ground. The radiometer will be of the Dicke type, which compares measurements to a known noise source to eliminate the effect of varying gain due to extreme temperatures. A 9-axis inertial measurement unit (IMU) will measure linear acceleration, angular rates, and magnetic field strength to determine the attitude of the payload. GPS data will be saved to track the location of the payload as it passes over the earth. With the attitude and GPS data, a map of soil moisture content under the payloads flight path will be able to be made. 
+Our scientific objective is to make low cost measurements of soil moisture content using a balloon born passive microwave radiometer. The payload will take wide-band measurements of the microwave noise emitted by the ground and determine soil moisture content through a modification of the zeroth order radiative transfer model (ZRT Model). A basic dielectric model will be used to solve for volumetric moisture content. \cite{ulaby_fung_moore_1986} A NADIR pointing antenna will extend from the pelican case to take measurements of the background microwave emissions coming from the ground. The radiometer will be of the hybrid type, which directly digitizes antenna readings for digital processing. A 9-axis inertial measurement unit (IMU) will measure linear acceleration, angular rates, and magnetic field strength to determine the attitude of the payload. GPS data will be saved to track the location of the payload as it passes over the earth. With the attitude and GPS data, a map of soil moisture content under the payloads flight path will be able to be made. 
 
 A Balloon born microwave radiometer to measure soil moisture was selected for several reasons. First, soil moisture content was chosen to be measured because of its importance to weather and climate monitoring.\cite{Pan2001} Climate models, weather predictions, crop yield estimation and water resource management systems all benefit from accurate and up to date measurements of ground moisture content. Soil moisture measurements have also proved useful in predicting wildfires.\cite{chaparro_piles_vall-llossera_2016,krueger_ochsner_quiring_engle_carlson_twidwell_fuhlendorf_2017} Second, measuring soil moisture content from radiometers is reasonably common, and as such a significant amount of literature exists on the topic. Most literature either concerns satellite born radiometers, aircraft born radiometers, or static ground based radiometers. \cite{Hanington,Kerr2001,ulaby_fung_moore_1986,Friesen2008,Schmugge1994} By exploring the possibility of balloon based radiometers and by attempting more advanced soil moisture estimation techniques, we can achieve a degree of novelty while still having a wealth of proven literature and designs to aid us. Third, balloon mounted radiometers have several advantages to static, aircraft mounted, and satellite radiometers. Due to the balloon's proximity to the ground compared to low earth orbit, balloon born radiometers can achieve greater resolution with smaller and less directional antennas. Balloon radiometers can achieve much greater loiter times than aircraft mounted radiometers, although balloons are uncontrolled. Balloon born radiometers also have the advantage of being significantly cheaper to operate than aircraft or satellite mounted radiometers. A trade study was performed in table \ref{tab:vehicle_trade}, and it can be seen that balloon born radiometers offer a unique performance compromise at very low cost when compared to aircraft mounted or satellite based radiometers.
 
@@ -253,7 +253,7 @@ Depending on the achieved directionality of the antenna, it may be important to 
 
 \subsubsection{Thermally Controlled Noise Source}
 
-Dicke type radiometers function by comparing the measured noise temperature to that of a known noise source. Noise sources usually take the form of a simple resistor at a specific temperature. A higher temperature will give better dynamic range to the radiometer measurements. Due to the harsh and changing thermal environment at high altitudes, our radiometer requires a thermally controlled noise source. This will take the form of a precision resistor wrapped in a NiCr heating element and insulation. A thermistor will provide feedback into a control system to keep the noise source at a constant temperature throughout the flight. The thermal mass of the resistor is quite low, so it is expected that the overall power consumption of the active thermal system will also be quite low. Power measuring circuitry will be included to monitor the payloads power consumption to ensure that the allotted 30 Wh of power will not be exceeded.
+Hybrid radiometers function by comparing the measured noise temperature to that of a known noise source. Noise sources usually take the form of a simple resistor at a specific temperature. A higher temperature will give better dynamic range to the radiometer measurements. Due to the harsh and changing thermal environment at high altitudes, our radiometer requires a thermally controlled noise source. This will take the form of a precision resistor wrapped in a NiCr heating element and insulation. A thermistor will provide feedback into a control system to keep the noise source at a constant temperature throughout the flight. The thermal mass of the resistor is quite low, so it is expected that the overall power consumption of the active thermal system will also be quite low. Power measuring circuitry will be included to monitor the payloads power consumption to ensure that the allotted 30 Wh of power will not be exceeded.
 
 \subsubsection{Experimental Procedures}
 
@@ -365,13 +365,12 @@ A preliminary power budget has been made in table \ref{tab:powerBudget}. Values 
 		\toprule
 		Component & Power Consumption & Margin & Consumption + Margin \\		
 		\midrule
-		Micro Processor/FPGA Board			&4.0 Wh & 0.5 & 6.0 Wh \\ 
-		Secondary Electronics and PCB's		&2 Wh & 0.3 & 2.6 Wh \\
-		Low Noise Amplifier					&0.9 Wh & 0.1 & 1.0 Wh \\ 
-		Mixer						 		&0.6 Wh & 0.1 & 0.66 Wh \\ 
-		Down-sampling VCO			 		&0.9 Wh & 0.1 & 1.0 Wh \\ 
-		Noise Reference						&8 Wh & 0.5 & 12 Wh \\ \midrule
-		Total Power Consumption				&16.4 Wh & 0.41 & 23.2 Wh
+		Micro Processor/FPGA Board			& 4.0 Wh  & 0.50  &  6.0 Wh \\ 
+		Secondary Electronics and PCB's		& 2.0 Wh  & 0.30  &  2.6 Wh \\
+		Low Noise Amplifier					& 6.8 Wh  & 0.10  &  7.5 Wh \\ 
+		Down conversion Mixer				& 0.5 Wh  & 0.20  &  0.6 Wh \\ 
+		Noise Reference						& 8.0 Wh  & 0.50  & 12.0 Wh \\ \midrule
+		Total Power Consumption				&21.3 Wh  & 0.35  & 28.7 Wh
 	\end{tabularx}	
 \end{table}
 
@@ -394,7 +393,7 @@ A preliminary mass budget has been made in table \ref{tab:massBudget}. Values ha
 		Horn Antenna						&1.5 kg & 0.3& 1.95 \\ 
 		Mechanical Fittings for Horn Antenna&1.5 kg & 0.3& 1.95 \\ 				
 		Low Noise Amplifier					&0.3 kg & 0.1& 0.33 \\ 
-		Mixer						 		&0.3 kg & 0.1& 0.33 \\ 
+		Down conversion Mixer		 		&0.3 kg & 0.1& 0.33 \\ 
 		Down-sampling VCO			 		&0.3 kg & 0.1& 0.33 \\ 
 		Noise Reference						&0.1 kg & 0.3& 0.13 \\
 		Cables, Connectors, Fittings		&0.5 kg & 0.5& 0.75 \\
