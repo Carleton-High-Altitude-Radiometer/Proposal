@@ -58,8 +58,8 @@
 		\normalsize \today \vspace*{2\baselineskip}\\
 		\includegraphics[scale=0.6]{Figures/CHARM.png}	\vspace*{2\baselineskip} \\
 		\textsc{
-		David Bascelli \quad Team Lead \\
-		Jacob Booth \quad Sensor Lead \\
+		Jacob Booth \\
+		David Bascelli \\
 		}}
 		
 \date{}
@@ -157,15 +157,16 @@ Most soil moisture radiometers make use of L-band measurements (1-2 GHz), usuall
 	\end{tabularx}
 \end{table}
 
+\subsubsection{Soil Moisture Transfer Model}
 
+To extract soil moisture content from radiometric data, a model of the received noise power must be formed. There are several parameters other than the soil moisture content that contribute to the total noise power measured by a radiometer. Surface roughness, surface temperature, presence and type of vegetation, atmospheric conditions, and antenna incidence angle all greatly effect the measured noise power and must be isolated to return an accurate soil moisture measurement. Isolating the ground moisture content is usually performed either by knowing tertiary information about the observed surface, or by making multiple measurements at different incidence angles, polarities, or frequencies. Our radiometer will measure the power spectral density over a wide band, but essentially only a single measurement will be made to reduce cost and complexity. Our radiometer will therefore have to rely on tertiary information such as open on-line datasets for earth ground cover, vegetation type, surface roughness, and surface temperature to eliminate several variables and obtain accurate measurements. Two methods are usually employed to solve for soil moisture content from the tertiary data and from the measured power spectral density.
 
-
-\subsubsection{Radiative Transfer Model}
-
-However, there are several other effects that also contribute to the total noise power measured by a radiometer. Surface roughness, surface temperature, presence and type of vegetation, atmospheric conditions, and antenna incidence angle all greatly effect the measured noise power and must be isolated to return an accurate soil moisture measurement. 
-
-
-The antenna will either be terminated with a coaxial cable at the antenna, or wave-guides will be used to guide C-band microwaves into the pelican case to keep all connections within the pelican case.
+\begin{enumerate}
+\item Empirical models have been historically used to solve for soil moisture due to their computational simplicity. Several papers have performed experiments to determine models for various surface roughness's, vegetation types, and frequency ranges. These models can achieve accurate extraction of soil moisture content. Often though, these models are limited in scope due to the challenges in taking measurements over a a wide array of conditions. These models are also only suited for the specific instrument and measurements that the authors wish to make and are not applicable to a general case. Making our own empirical model is an option but would be time consuming and difficult.
+\item Inverting a radiative transfer model allows the extraction of soil moisture content for any arbitrary radiometer, given that the parameters of the surface and atmosphere is well known at the desired frequency. This method is only as accurate as the ability to estimate the surface conditions and the applicability of the model to real world conditions. This method could introduce errors by ignoring some radiative effects or non-linearities that an empirical model might be able to account. Still, inverting a radiative transfer model allows for a more general solution that could by applied to any radiometric data. The zeroth order transfer function is the most basic form that has been used to extract soil moisture content and takes the form
+%\boldblue{REMEMBER TO ADD THE IMAGE FROM ULABY OF THE ZRT MODEL AND THE EQUATION}
+Since our radiometer is only measuring a single frequency and polarization, tertiary parameters must be determined from outside datasets. In an attempt to increase the accuracy of our radiometer system, the ZRT model will be derived as a function of the frequency and advanced parameter estimation techniques will be applied on the measure power spectral density. For example, a least squares parameter estimation technique could optimize the parameters of the ZRT model to fit the the measured power spectral density. It is expected that with this method alone, it will not be possible to eliminate every variable without resorting to tertiary datasets. However, it is expected that this could lead to more accurate estimation of soil moisture content.
+\end{enumerate}
 
 \subsubsection{Attitude Determination}
 Jacob
