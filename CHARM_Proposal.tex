@@ -93,28 +93,28 @@
 %-------------------------------------------------------------------------------
 
 \section{Executive Summary}
-Microwave remote sensing has been a common payload on earth observation satellites since the early days of space-flight. In as early as 1962, a radiometer on-board the Mariner 2 mission measured the surface temperature of Venus. 1968 Saw the first space-born earth observation radiometer on-board the  Cosmos 243 satellite, which measured atmospheric water vapour and global ice cover. Many different radiometer configurations can make a wide array of different geological, biological, and climate measurements. The CHARM project will design and manufacture a C-band balloon mounted microwave radiometer for the purpose of measuring soil moisture content over a large area. Soil moisture measurements are crucial in predicting local weather conditions and monitoring climate change. Incorporating soil moisture measurements into weather and climate models allows for more accurate medium term weather forecasts and can also give clues about future droughts, crop yields, and water resource management. Currently, most radiometric data comes from space-born radiometers, such as those on the SMAP or SMOS satellites. To achieve high resolution and accuracy, these space-born radiometers utilize cryogenic components, complex phased array or synthetic aperture technologies, and require large and very directional antennas. Our belief is that measurements of similar similar quality could be performed from a high altitude balloon at significantly reduced cost. 
+Microwave remote sensing has been a common payload on earth observation satellites since the early days of space-flight. In as early as 1962, a radiometer on-board the Mariner 2 mission measured the surface temperature of Venus. 1968 Saw the first space-born earth observation radiometer on-board the  Cosmos 243 satellite, which measured atmospheric water vapour and global ice cover. Many different radiometer configurations can make a wide array of different geological, biological, and climate measurements. The CHARM project will design and manufacture a balloon mounted microwave radiometer for the purpose of measuring soil moisture content over a large area. Soil moisture measurements are crucial in predicting local weather conditions and monitoring climate change. Incorporating soil moisture measurements into weather and climate models allows for more accurate medium term weather forecasts and can also give clues about future droughts, crop yields, and water resource management. Currently, most radiometric data comes from space-born radiometers, such as those on the SMAP or SMOS satellites. To achieve high resolution and accuracy, these space-born radiometers utilize cryogenic components, complex phased array or synthetic aperture technologies, and require large and very directional antennas. Our belief is that measurements of similar similar quality could be performed from a high altitude balloon at significantly reduced cost. 
 
 \newpage
 
 \section{Proposal}
 \subsection{Scientific Objectives}
 
-Our scientific objective is to make low cost measurements of soil moisture content using a balloon born microwave radiometer. The payload will take wide-band measurements of the noise equivalent temperature of the ground and determine soil moisture content through a modification of the zeroth order radiative transfer model (ZRT Model). A basic dielectric model will be used to solve for volumetric moisture content. \cite{ulaby_fung_moore_1986} A NADIR pointing antenna will extend from the pelican case to take measurements of the background microwave emissions coming from the ground. The radiometer will be of the Dicke type, which compares measurements to a known noise source to eliminate the effect of varying gain due to extreme temperatures. A 9-axis inertial measurement unit (IMU) will measure linear acceleration, angular rates, and magnetic field strength to determine the attitude of the payload. GPS data will be saved to track the location of the payload as it passes over the earth. With the attitude and GPS data, a map of soil moisture content under the payloads flight path will be able to be made. 
+Our scientific objective is to make low cost measurements of soil moisture content using a balloon born passive microwave radiometer. The payload will take wide-band measurements of the noise equivalent temperature of the ground and determine soil moisture content through a modification of the zeroth order radiative transfer model (ZRT Model). A basic dielectric model will be used to solve for volumetric moisture content. \cite{ulaby_fung_moore_1986} A NADIR pointing antenna will extend from the pelican case to take measurements of the background microwave emissions coming from the ground. The radiometer will be of the Dicke type, which compares measurements to a known noise source to eliminate the effect of varying gain due to extreme temperatures. A 9-axis inertial measurement unit (IMU) will measure linear acceleration, angular rates, and magnetic field strength to determine the attitude of the payload. GPS data will be saved to track the location of the payload as it passes over the earth. With the attitude and GPS data, a map of soil moisture content under the payloads flight path will be able to be made. 
 
-A Balloon born microwave radiometer to measure soil moisture was selected for several reasons. First, soil moisture content was chosen to be measured because of its importance to weather and climate monitoring.\cite{Pan2001} Soil moisture measurements are useful in many different circumstances. Climate models, weather predictions, crop yield estimation and water resource management systems all benifit from accurate and up to date measurements of ground moisture content. Soil moisture measurements have also proved useful in predicting wildfires.\cite{chaparro_piles_vall-llossera_2016,krueger_ochsner_quiring_engle_carlson_twidwell_fuhlendorf_2017} Second, measuring soil moisture content from radiometers is reasonably common and a significant amount of literature exists on the topic. Most literature either concerns satellite born radiometers, aircraft born radiometers, or static ground based radiometers. \cite{Hanington,Kerr2001,ulaby_fung_moore_1986,Friesen2008,Schmugge1994} By exploring the possibility of balloon based radiometers and by attempting more advanced soil moisture estimation techniques, we can achieve a degree of novelty while still having a wealth of proven literature and designs to aid us. Third, balloon mounted radiometers have several advantages to static, aircraft mounted, and satellite radiometers. Due to the balloon's proximity to the ground compared to low earth orbit, balloon born radiometers can achieve greater resolution with smaller and less directional antennas. Balloon radiometers can achieve much greater loiter times than aircraft born radiometers, although balloons are uncontrolled. Balloon born radiometers also have the advantage of being significantly cheaper to operate than aircraft or satellite mounted radiometers. A trade study was performed in table \ref{tab:algorithm_parameters}, and it can be seen that balloon born radiometers offer a unique performance compromise at very low cost when compared to aircraft mounted or satellite based radiometers.
+A Balloon born microwave radiometer to measure soil moisture was selected for several reasons. First, soil moisture content was chosen to be measured because of its importance to weather and climate monitoring.\cite{Pan2001} Soil moisture measurements are useful in many different circumstances. Climate models, weather predictions, crop yield estimation and water resource management systems all benifit from accurate and up to date measurements of ground moisture content. Soil moisture measurements have also proved useful in predicting wildfires.\cite{chaparro_piles_vall-llossera_2016,krueger_ochsner_quiring_engle_carlson_twidwell_fuhlendorf_2017} Second, measuring soil moisture content from radiometers is reasonably common and a significant amount of literature exists on the topic. Most literature either concerns satellite born radiometers, aircraft born radiometers, or static ground based radiometers. \cite{Hanington,Kerr2001,ulaby_fung_moore_1986,Friesen2008,Schmugge1994} By exploring the possibility of balloon based radiometers and by attempting more advanced soil moisture estimation techniques, we can achieve a degree of novelty while still having a wealth of proven literature and designs to aid us. Third, balloon mounted radiometers have several advantages to static, aircraft mounted, and satellite radiometers. Due to the balloon's proximity to the ground compared to low earth orbit, balloon born radiometers can achieve greater resolution with smaller and less directional antennas. Balloon radiometers can achieve much greater loiter times than aircraft born radiometers, although balloons are uncontrolled. Balloon born radiometers also have the advantage of being significantly cheaper to operate than aircraft or satellite mounted radiometers. A trade study was performed in table \ref{tab:vehicle_trade}, and it can be seen that balloon born radiometers offer a unique performance compromise at very low cost when compared to aircraft mounted or satellite based radiometers.
 
 \begin{table}[!h]
 	\centering
 	\vspace{0.5cm}
 	\renewcommand{\arraystretch}{1.3}
 	\caption{Radiometer Vehicle Trade Study. }
-	\label{tab:algorithm_parameters}
+	\label{tab:vehicle_trade}
 	\begin{tabularx}{\textwidth}{llll}
 		\toprule
 						& Satellite & Aircraft & Balloon \\		
 		\midrule
-		Cost			&\$\$\$&\$\$&\$ \\ 
+		Cost					&Very High&Moderate&Low \\ 
 		Antenna Size 			&Large&Small&Small/Medium \\
 		Resolution 				&Low Resolution&High Resolution&Medium Resolution \\ 
 		Atmospheric Effects		&High&Low&Moderate \\ 
@@ -124,12 +124,49 @@ A Balloon born microwave radiometer to measure soil moisture was selected for se
 \end{table}
 
 Lastly, soil moisture retrieval from radiometric data is one of the simpler radiometer configurations to design and operate, allowing our team to gain experience with radiometer principals before attempting more advanced designs. Thus, a microwave radiometer was chosen as our balloon payload because of its many geoscientific applications, the wealth of literature and design aids, their suitability to the high altitude balloon environment, and because it allows us to gain experience with a relatively simple radiometer configuration.
-
  
 \subsection{Experiment Design}
-The antenna will either be terminated with a coaxial cable at the antenna, or wave-guides will be used to guide C-band microwaves into the pelican case to keep all connections within the pelican case.
+
+Passive microwave radiometers work by measuring the electromagnetic radiation emitted from the earth's surface in the microwave band. Liquid water content and water vapour is translucent to microwave frequencies, so an estimation of soil water content can be made by measuring the power of the emitted noise. By utilizing modern digital signal processing techniques, a wide-band power spectral density of the noise will be calculated. Using a radiative transfer model and potentially utilizing tertiary datasets, the power spectral density will be able to give a measurement of soil moisture content.
+
 \subsubsection{Radiometer Block Diagram}
 David
+
+\subsubsection{Band Selection}
+
+Most soil moisture radiometers make use of L-band measurements (1-2 GHz), usually at or around 1.4 GHz. L-band measurements are ideal for soil moisture extraction for several reasons. First, the L-band is nearly transparent to vegetation, allowing for more accurate measurements. Second, the L-band penetrates up to a meter of soil, allowing deeper measurements which may indicate true groundwater content. Third, there is a reserved band for radio-astronomy at 1.4 GHz, reducing potential sources of interference. Lastly, RF components in the L-band have become increasingly cheap due to commercial uses for the L-Band such as WiFi and cellular networks. There is also a significant amount of literature and proven L-Band radiometer designs and models. The L-band however requires large antennas or complex measurement techniques to achieve directional measurements and build a map of soil moisture content. For example the radiometer aboard the SMOS satellite uses aperture synthesis and three large antennas ~1 meter in length to achieve a ground resolution of 35-50 km from a 755km orbit. \cite{Wigneron2010}. The SMAP mission uses a 6 meter dish antenna to achieve 40 km ground resolution from a 685 km orbit. \cite{entekhabi_njoku_oneill_spencer_jackson_entin_im_kellogg_2008}  For our radiometer, even a 30 cm dish only achieves a beam-width of 45 degrees at 1.4 GHz. Due to the spacial requirements of the CAN-SBX competition, even a 30 cm antenna might be too large. Thus, currently radiometers in the C-band (4-8 GHz) are being explored. C-band radiometers share some of the benefits of L-band radiometers. Components are still quite cheap due to the prevalence of WiFi and Bluetooth technology, there are some reserved radio-astronomy bands within the C-band, and there is some recent literature concerning soil moisture estimation from C-band radiometers. \cite{Description2000,jackson_gasiewski_oldak_klein_njoku_yevgrafov_christiani_bindlish_2002} However, the C-band does not penetrate the ground as far and can only accurately measure soil moisture to around 10-20 cm depth. Atmospheric microwave emissions are slightly stronger at the C-band, making it more difficult to accurately determine soil moisture content. The C-band is more greatly effected by ground vegetation type, water content in the ground vegetation canopy, and surface roughness effects, making accurate measurements more difficult or impossible. \cite{ulaby_fung_moore_1986} However, C-band radiometers offer much smaller antennas and much higher directionality and ground resolution. The same 30 cm parabolic dish antenna would achieve a 10 degree beam-width, allowing a ground resolution of 5 km at an altitude of 30 km. Both L-band and C-band options are currently being considered for the radiometer. A trade study table can be seen in table \ref{tab:band_trade}.
+
+\begin{table}[!h]
+	\centering
+	\vspace{0.5cm}
+	\renewcommand{\arraystretch}{1.3}
+	\caption{Radiometer Band Trade Study. }
+	\label{tab:band_trade}
+	\begin{tabularx}{\textwidth}{lXll}
+		\toprule
+									& & L-Band & C-Band \\		
+		\midrule
+		Frequency					& &1-2 GHz&4-8 GHz \\ 
+		Component Cost				& &Low&Moderate	 \\
+		Antenna Size 				& &Large&Small	 \\
+		Resolution 					& &Low Resolution&High Resolution 	\\ 
+		Atmospheric Emission		& &Low&Moderate 					\\ 
+		Effect of Vegetation		& &Low&Moderate						\\
+		Effect of Surface Roughness	& &Low&Moderate						\\
+		Ground Penetration			& &Up to 1 meter&10-20 cm			\\
+	\end{tabularx}
+\end{table}
+
+
+
+
+\subsubsection{Radiative Transfer Model}
+
+However, there are several other effects that also contribute to the total noise power measured by a radiometer. Surface roughness, surface temperature, presence and type of vegetation, atmospheric conditions, and antenna incidence angle all greatly effect the measured noise power and must be isolated to return an accurate soil moisture measurement. 
+
+
+The antenna will either be terminated with a coaxial cable at the antenna, or wave-guides will be used to guide C-band microwaves into the pelican case to keep all connections within the pelican case.
+
 \subsubsection{Attitude Determination}
 Jacob
 \subsubsection{Experimental Procedures}
